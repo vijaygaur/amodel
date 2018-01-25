@@ -78,7 +78,7 @@ def validate(trainId, validationId, model, reqdata):
     data_connector.updateValidationStatus(validationId,response["status"],response["reason"],json.dumps(response["report"]),response["numRecords"],endTime)
     #update model status
 
-def predict(trainId, reqdata):
+def predict(trainId, pid, reqdata):
     #id = instance id which we can use to update model training status
     data_connector.downloadModelPackage(trainId,'package','package.zip')
     jsonData = json.loads(reqdata)
