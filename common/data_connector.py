@@ -139,6 +139,8 @@ class DataConnector:
     '''
 
     def fetchData(self, req):
+        print(type(req))
+        print(req)
         if(req["type"]=='inline'):
             return json.loads(req["data"])
         else:
