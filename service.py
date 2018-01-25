@@ -82,6 +82,7 @@ def predict(trainId, pid, reqdata):
     #id = instance id which we can use to update model training status
     data_connector.downloadModelPackage(trainId,'package','package.zip')
     jsonData = json.loads(reqdata)
+    print(jsonData)
     data = data_connector.fetchData(jsonData)
     print(data)
     mdl.reload('package/model.pickle')
