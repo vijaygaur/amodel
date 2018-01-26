@@ -49,6 +49,7 @@ def trainAsync(id):
     return train(id,modelInstance["model"],modelInstance["traindata"])
 
 def train(id, model, reqdata):
+    print(reqdata)
     #id = instance id which we can use to update model training status
     jsonData = json.loads(reqdata)
     data = data_connector.fetchData(jsonData)
@@ -67,6 +68,7 @@ def validateAsync(id):
     return train(id,modelInstance["model"],modelInstance["traindata"])
 
 def validate(trainId, validationId, model, reqdata):
+    print(reqdata)
     #id = instance id which we can use to update model training status
     data_connector.downloadModelPackage(trainId,'package','package.zip')
     jsonData = json.loads(reqdata)
