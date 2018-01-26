@@ -142,6 +142,8 @@ class DataConnector:
         print(type(req))
         print(req)
         if(req["type"]=='inline'):
+            print(req["data"])
+            print(type(req["data"]))
             return json.loads(req["data"])
         else:
             return self.fetch(req["location"],req["store"])
