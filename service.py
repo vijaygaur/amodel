@@ -91,7 +91,7 @@ def predict(trainId, pid, reqdata):
     mdl.reload('package/model.pickle')
     response= mdl.predict(data)
     print(response)
-    data_connector.updatePrediction(trainId,pId, 1,json.dumps(response))
+    data_connector.updatePrediction(trainId,pid, 1,json.dumps(response))
     return response
     #update model status
 #data=data_connector.fetch('databoard','datagov.activity')
